@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary"
+    android:weightSum="6">
+
+    <TextView
+        android:padding="25dp"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="Enter Your Details"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:textAlignment="center"
+        android:textColor="#fff" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5">
+
+        <RelativeLayout
+            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:gravity="center"
+            tools:context="com.icucs.ip.activities.UserDataActivity">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:textColorHint="#fff"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"
+                android:id="@+id/firstName"
+                android:maxLines="1"
+                android:hint="First Name"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:textColorHint="#fff"
+                android:textStyle="bold"
+                android:layout_below="@id/firstName"
+                android:layout_marginBottom="8dp"
+                android:id="@+id/lastName"
+                android:maxLines="1"
+                android:hint="Last Name"/>
+
+            <EditText
+                android:layout_below="@id/lastName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:textColorHint="#fff"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"
+                android:id="@+id/email"
+                android:inputType="textEmailAddress"
+                android:hint="Email"/>
+
+            <EditText
+                android:layout_below="@id/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:textColorHint="#fff"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"
+                android:id="@+id/city"
+                android:maxLines="1"
+                android:hint="City"/>
+
+            <EditText
+                android:layout_below="@id/city"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:textColorHint="#fff"
+                android:textStyle="bold"
+                android:inputType="number"
+                android:maxLines="1"
+                android:layout_marginBottom="8dp"
+                android:id="@+id/address"
+                android:hint="Address"/>
+
+            <Button
+                android:layout_below="@id/address"
+                android:id="@+id/submit_userdetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Submit"
+                android:textStyle="bold"
+                android:background="@android:color/white"/>
+
+
+        </RelativeLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context="com.manju.jugaad.OrderActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+
+            <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Place Your Order"
+        android:padding="16dp"
+        android:textStyle="bold"
+        android:textSize="24dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Packaging"
+        android:padding="16dp"
+        android:textStyle="bold"
+        android:textSize="20dp"/>
+
+    <RadioGroup
+        android:id="@+id/pack_select"
+        android:layout_width="match_parent"
+        android:padding="16dp"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/Can"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Can Rs y"/>
+
+        <RadioButton
+            android:id="@+id/Bottle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bottle Rs x"/>
+
+
+    </RadioGroup>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:hint="Quantity"
+        android:inputType="number"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mode of Payment"
+        android:padding="16dp"
+        android:textStyle="bold"
+        android:textSize="20dp"/>
+
+    <RadioGroup
+        android:id="@+id/mop"
+        android:layout_width="match_parent"
+        android:padding="16dp"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/cod"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cash on Delivery"/>
+
+        <RadioButton
+            android:id="@+id/paytm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PayTM"/>
+
+
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delivery Time"
+        android:padding="16dp"
+        android:textStyle="bold"
+        android:textSize="20dp"/>
+
+    <RadioGroup
+        android:id="@+id/delivery_time"
+        android:layout_width="match_parent"
+        android:padding="16dp"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/now"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Now"/>
+
+        <RadioButton
+            android:id="@+id/later"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Later"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Enter Time" />
+
+
+    </RadioGroup>
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Place Order"
+                android:id="@+id/place_order"/>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+
+
+</LinearLayout>
