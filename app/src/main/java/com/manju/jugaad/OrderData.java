@@ -5,7 +5,7 @@ package com.manju.jugaad;
  */
 
 public class OrderData {
-    public String paymentMode, deliverySchedule, deliveryTime, quantity, packing, name, address, uid;
+    public String paymentMode, deliverySchedule, deliveryTime, quantity, packing, name, address, uid, number;
 
     OrderData()
     {

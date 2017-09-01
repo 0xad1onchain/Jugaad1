@@ -30,6 +30,7 @@ public class OrderActivity extends AppCompatActivity {
     public UserData userData;
     public OrderData orderData;
     public EditText quantity, time;
+    public String uid = "NA";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +52,8 @@ public class OrderActivity extends AppCompatActivity {
             }
         };
         user = FirebaseAuth.getInstance().getCurrentUser();
-        String uid = user.getUid();
+        uid = user.getUid();
+        orderData = new OrderData();
         orderData.uid = uid;
 
         final DatabaseReference orderRef = FirebaseDatabase.getInstance().getReference().child("Orders");
@@ -64,6 +66,7 @@ public class OrderActivity extends AppCompatActivity {
                 orderData.name = userData.fname + " " + userData.lname;
             }
 
+
             @Override
             public void onCancelled(DatabaseError databaseError) {
 
@@ -74,6 +77,8 @@ public class OrderActivity extends AppCompatActivity {
         deliveryTime = (RadioGroup) findViewById(R.id.delivery_time);
         orderDetails = (RadioGroup) findViewById(R.id.pack_select);
         placeOrder = (Button) findViewById(R.id.place_order);
+        quantity = (EditText) findViewById(R.id.quantityText);
+        time = (EditText) findViewById(R.id.timeText);
 
         placeOrder.setOnClickListener(new View.OnClickListener() {
 
@@ -119,7 +124,7 @@ public class OrderActivity extends AppCompatActivity {
                     orderData.deliverySchedule = "Now";
                     orderData.deliveryTime = "NA";
                 }
-                if(deliveryTime.getCheckedRadioButtonId() == R.id.now) {
+                if(deliveryTime.getCheckedRadioButtonId() == R.id.later) {
                     orderData.deliverySchedule = "Later";
                     String timeString = time.getText().toString();
                     if (TextUtils.isEmpty(timeString)) {
@@ -129,8 +134,10 @@ public class OrderActivity extends AppCompatActivity {
                     orderData.deliveryTime = time.getText().toString();
                 }
 
-                String Key = orderRef.getKey();
-                orderRef.child(Key).setValue(userData).addOnSuccessListener(new OnSuccessListener<Void>() {
+                orderData.quantity = quantity.getText().toString();
+                orderData.number = uid;
+
+                orderRef.push().setValue(orderData).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
                         Toast.makeText(getApplicationContext(), "Order Placed", Toast.LENGTH_LONG).show();
