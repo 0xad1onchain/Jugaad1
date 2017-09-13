@@ -29,7 +29,7 @@ public class OrderActivity extends AppCompatActivity {
     private FirebaseUser user;
     public UserData userData;
     public OrderData orderData;
-    public EditText quantity, time;
+    public EditText quantity, time, address;
     public String uid = "NA";
 
     @Override
@@ -79,6 +79,7 @@ public class OrderActivity extends AppCompatActivity {
         placeOrder = (Button) findViewById(R.id.place_order);
         quantity = (EditText) findViewById(R.id.quantityText);
         time = (EditText) findViewById(R.id.timeText);
+        address = (EditText) findViewById(R.id.address_text);
 
         placeOrder.setOnClickListener(new View.OnClickListener() {
 
@@ -90,6 +91,15 @@ public class OrderActivity extends AppCompatActivity {
                 if (TextUtils.isEmpty(QuantityString)) {
                     Toast.makeText(getApplicationContext(), "Enter Quantity!", Toast.LENGTH_SHORT).show();
                     return;
+                }
+
+                String AddressString = address.getText().toString();
+                if (TextUtils.isEmpty(QuantityString)) {
+
+                }
+                else
+                {
+                    orderData.address = AddressString;
                 }
 
                 if (mop.getCheckedRadioButtonId() == -1)

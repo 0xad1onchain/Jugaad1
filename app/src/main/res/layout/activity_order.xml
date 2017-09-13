@@ -44,26 +44,21 @@
             android:id="@+id/Can"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Can Rs y"/>
-
-        <RadioButton
-            android:id="@+id/Bottle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Bottle Rs x"/>
+            android:text="Can- Rs 50"/>
 
 
-    </RadioGroup>
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:id="@+id/quantityText"
-        android:hint="Quantity"
-        android:inputType="number"/>
 
-    <TextView
+            <EditText
+                android:id="@+id/quantityText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Quantity"
+                android:inputType="number"
+                android:padding="16dp" />
+        </RadioGroup>
+
+            <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Mode of Payment"
@@ -123,9 +118,21 @@
             android:layout_height="wrap_content"
             android:id="@+id/timeText"
             android:hint="Enter Time" />
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/address_text"
+            android:layout_width="303dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPostalAddress"
+            android:hint="Address(optional)"
+            android:textColorHint="#000000"
+            android:textSize="15sp"/>
 
 
-    </RadioGroup>
+
+
 
 
             <Button

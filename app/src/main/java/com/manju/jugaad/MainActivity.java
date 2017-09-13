@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth.AuthStateListener authListener;
     private FirebaseAuth auth;
     private FirebaseUser user;
-    private Button Apaha;
+    private Button Apaha, Signout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +74,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, OrderActivity.class));
+            }
+        });
+
+        Signout = (Button) findViewById(R.id.sign_out);
+        Signout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(MainActivity.this, LoginActivity.class));
             }
         });
     }
